@@ -1,3 +1,8 @@
+#CV Creator Application
+
+This React + Vite project build off of the react template is an exercise in managing state in a React app.
+This application takes basic resume information and creates a preview of a resume with them.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
