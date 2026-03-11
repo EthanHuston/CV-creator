@@ -1,35 +1,85 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import EditorPanel from "./components/EditorPanel";
+import CVPreview from "./components/CVPreview";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  // CV Data State
+  const [generalInfo, setGeneralInfo] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
+  const [education, setEducation] = useState({
+    school: "",
+    degree: "",
+    dates: "",
+  });
+
+  const [experience, setExperience] = useState({
+    company: "",
+    position: "",
+    responsibilities: "",
+    from: "",
+    until: "",
+  });
+
+  //UI State
+  const [sectionState, setSectionState] = useState({
+    general: { isOpen: true, isEditing: true },
+    education: { isOpen: false, isEditing: true },
+    experience: { isOpen: false, isEditing: true },
+  });
+
+  //Handler Callbacks
+
+  //Used to toggle the open or closed state of a section
+  function toggleSection(key) {
+    setSectionState((prev) => ({
+      ...prev,
+      [key]: { ...prev[key], isOpen: !prev[key].isOpen },
+    }));
+  }
+
+  //Used to close a section when done filling or editing
+  function saveSection(key) {
+    setSectionState((prev) => ({
+      ...prev,
+      [key]: { isOpen: false, isEditing: false },
+    }));
+  }
+
+  //Used for reopening a section to edit the contents
+  function editSection(key) {
+    setSectionState((prev) => ({
+      ...prev,
+      [key]: { isOpen: true, isEditing: true },
+    }));
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="app-layout">
+      <EditorPanel
+        generalInfo={generalInfo}
+        education={education}
+        experience={experience}
+        sectionState={sectionState}
+        onToggleSection={toggleSection}
+        onSaveSection={saveSection}
+        onEditSection={editSection}
+        onChangeGeneral={setGeneralInfo}
+        onChangeEducation={setEducation}
+        onChangeExperience={setExperience}
+      />
+
+      <CVPreview
+        generalInfo={generalInfo}
+        education={education}
+        experience={experience}
+      />
+    </div>
+  );
 }
 
-export default App
+export default App;
