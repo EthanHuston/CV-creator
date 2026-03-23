@@ -1,42 +1,32 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/*Google Font Import*/
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap");
+
+*,
+*::before. *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+:root {
+  /*Color Variables */
+  --editor-bg: #0e0e15;
+  --editor-surface: #16161f;
+  --editor-border: #252535;
+  --accent: #c9954c;
+  --accent-hover: #dba85f;
+  --text-primary: #e4e4f0;
+  --text-secondary: #6a6a8a;
+  --input-bg: #1e1e2a;
+  --input-border: #2e2e42;
+  --input-border-focus: #c9954c;
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+  --preview-bg: #eae6e0;
+  --paper-bg: #ffffff;
+  --cv-text: #1a1a1a;
+  --cv-text-muted: #888888;
+  --cv-rule: #1a1a1a;
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  --font-ui: "DM Sans", system-ui, sans-serif;
+  --font-cv: "Cormorant Garamond", Georgia, serif;
 }
