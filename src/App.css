@@ -30,3 +30,16 @@
   --font-ui: "DM Sans", system-ui, sans-serif;
   --font-cv: "Cormorant Garamond", Georgia, serif;
 }
+
+body {
+  font-family: var(--font-ui);
+  background: var(--editor-bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+.app-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  min-height: 100vh;
+}
