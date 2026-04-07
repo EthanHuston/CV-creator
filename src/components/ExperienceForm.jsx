@@ -60,8 +60,8 @@ function ExperienceForm({ data, isEditing, onChange, onSave, onEdit }) {
         <input
           id="exp-responsibilities"
           type="text"
-          name="responsibilities"
-          value={data.position}
+          name="reponsibilities"
+          value={data.reponsibilities}
           onChange={handleChange}
           placeholder="Describe your main responsibilities..."
           rows={4}

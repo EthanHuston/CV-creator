@@ -53,8 +53,8 @@ function CVPreview({ generalInfo, education, experience }) {
                 )}
               </div>
               {company && <p className="cv-entry-sub">{company}</p>}
-              {responsibilities && (
-                <p className="cv-entry-body">{responsibilities}</p>
+              {reponsibilities && (
+                <p className="cv-entry-body">{reponsibilities}</p>
               )}
             </div>
           </section>

@@ -1,7 +1,7 @@
-import AccordionSection from "./AccordionSection";
-import GeneralInfoForm from "./GeneralInfoForm";
-import EducationForm from "./EducationForm";
-import ExperienceForm from "./ExperienceForm";
+import AccordionSection from "./AccordionSection.jsx";
+import GeneralInfoForm from "./GeneralInfoForm.jsx";
+import EducationForm from "./EducationForm.jsx";
+import ExperienceForm from "./ExperienceForm.jsx";
 import "../styles/EditorPanel.css";
 
 function EditorPanel({
@@ -14,7 +14,7 @@ function EditorPanel({
   onEditSection,
   onChangeGeneral,
   onChangeEducation,
-  onChangeExperience, 
+  onChangeExperience,
 }) {
   return (
     <aside className="editor-panel">
@@ -52,7 +52,7 @@ function EditorPanel({
         <AccordionSection
           title="Experience"
           isOpen={sectionState.experience.isOpen}
-          onToggle={() => onToggleSection("Experience")}
+          onToggle={() => onToggleSection("experience")}
         >
           <ExperienceForm
             data={experience}

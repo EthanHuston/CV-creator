@@ -1,8 +1,8 @@
-import "../styles/GeneralInfoForm.css";
+import "../styles/forms.css";
 
 function GeneralInfoForm({ data, isEditing, onChange, onSave, onEdit }) {
   function handleChange(e) {
-    onChange({ ...data, [e.target.value]: e.target.value });
+    onChange({ ...data, [e.target.name]: e.target.value });
   }
 
   if (!isEditing) {
